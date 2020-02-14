@@ -25,7 +25,7 @@ SECRET_KEY = '%vqm)h-@9#&*r(9u=53$!$epd&p!!i148k!zj5y5lr&6t4#6k-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['http://localhost:4200',]
 
 
 # Application definition
@@ -37,7 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # for using django rest framework
     'rest_framework',
+    # for cors headers to connect api with client request
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -48,7 +51,19 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # for cors headers to connect api with client request
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
+
+# Access-Control-Allow-Origin = [
+#     'http://localhost:4200',
+# ]
+
+# CORS_ORIGIN_WHITELIST = [
+#     # whitelisting the client IP to pass data
+#     'http://localhost:4200',
+# ]
 
 ROOT_URLCONF = 'scrapebook.urls'
 
