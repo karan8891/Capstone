@@ -60,10 +60,10 @@ MIDDLEWARE = [
 #     'http://localhost:4200',
 # ]
 
-# CORS_ORIGIN_WHITELIST = [
-#     # whitelisting the client IP to pass data
-#     'http://localhost:4200',
-# ]
+CORS_ORIGIN_WHITELIST = [
+    # whitelisting the client IP to pass data
+    'http://localhost:4200/api/users',
+]
 
 ROOT_URLCONF = 'scrapebook.urls'
 
